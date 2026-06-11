@@ -8,10 +8,10 @@
 <p>Redirecting back to the app...</p>
 
 <script>
-    window.location.href =
-        "exp://riv_7tc-hanaeatsplanes-8081.exp.direct/--/oauth" +
-        window.location.search +
-        window.location.hash;
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get("state")
+
+    window.location.href = target + window.location.search + window.location.hash;
 </script>
 </body>
 </html>
